@@ -1,0 +1,216 @@
+﻿
+	/*------------------------------------*\
+			#SWEET-ALERT OVERRIDES
+	\*------------------------------------*/
+	.sweet-alert {
+		width: 320px;
+		padding: 40px;
+		border-radius: 0;
+		text-align: center;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		overflow: hidden;
+		margin-left: auto;
+		margin-right: auto;
+		z-index: $top-z; // high because of zopim chat plugin
+		margin-top: 0 !important; // offset styling from sweet-alert
+		box-shadow: 0px 0px 48px 0px rgba(0,0,0,.2);
+
+		p {
+			line-height: 22px;
+		}
+	}
+
+	.sweet-alert-icon {
+		$red: #F27474;
+		$orange: #F8BB86;
+		$blue: #C9DAE1;
+		$green: #A5DC86;
+
+		width: 80px;
+		height: 80px;
+		border: 4px solid gray;
+		border-radius: 50%;
+		margin: 20px auto 40px;
+		padding: 0;
+		position: relative;
+		box-sizing: content-box;
+
+		&.error {
+			border-color: $red;
+
+			.x-mark {
+				position: relative;
+				display: block;
+			}
+
+			.line {
+				position: absolute;
+				height: 5px;
+				width: 47px;
+				background-color: $red;
+				display: block;
+				top: 37px;
+				border-radius: 2px;
+
+				&.left {
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+					left: 17px;
+				}
+
+				&.right {
+					-webkit-transform: rotate(-45deg);
+					transform: rotate(-45deg);
+					right: 16px;
+				}
+			}
+		}
+
+		&.warning {
+			border-color: $orange;
+
+			.body { // Exclamation mark body
+				position: absolute;
+				width: 5px;
+				height: 47px;
+				left: 50%;
+				top: 10px;
+				border-radius: 2px;
+				margin-left: -2px;
+				background-color: $orange;
+			}
+
+			.dot { // Exclamation mark dot
+				position: absolute;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				margin-left: -3px;
+				left: 50%;
+				bottom: 10px;
+				background-color: $orange;
+			}
+		}
+
+		&.info {
+			border-color: $blue;
+
+			&::before { // i-letter body
+				content: "";
+				position: absolute;
+				width: 5px;
+				height: 29px;
+				left: 50%;
+				bottom: 17px;
+				border-radius: 2px;
+				margin-left: -2px;
+				background-color: $blue;
+			}
+
+			&::after { // i-letter dot
+				content: "";
+				position: absolute;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				margin-left: -3px;
+				top: 19px;
+				background-color: $blue;
+			}
+		}
+
+		&.success {
+			border-color: $green;
+
+			&::before, &::after { // Emulate moving circular line
+				content: '';
+				border-radius: 50%;
+				position: absolute;
+				width: 60px;
+				height: 120px;
+				background: white;
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+			&::before {
+				border-radius: 120px 0 0 120px;
+				top: -7px;
+				left: -33px;
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-transform-origin: 60px 60px;
+				transform-origin: 60px 60px;
+			}
+
+			&::after {
+				border-radius: 0 120px 120px 0;
+				top: -11px;
+				left: 30px;
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-transform-origin: 0px 60px;
+				transform-origin: 0px 60px;
+			}
+
+			.placeholder { // Ring
+				width: 80px;
+				height: 80px;
+				border: 4px solid rgba($green, 0.2);
+				border-radius: 50%;
+				box-sizing: content-box;
+				position: absolute;
+				left: -4px;
+				top: -4px;
+				z-index: 2;
+			}
+
+			.fix { // Hide corners left from animation
+				width: 5px;
+				height: 90px;
+				background-color: white;
+				position: absolute;
+				left: 28px;
+				top: 8px;
+				z-index: 1;
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+
+			.line {
+				height: 5px;
+				background-color: $green;
+				display: block;
+				border-radius: 2px;
+				position: absolute;
+				z-index: 2;
+
+				&.tip {
+					width: 25px;
+					left: 14px;
+					top: 46px;
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+
+				&.long {
+					width: 47px;
+					right: 8px;
+					top: 38px;
+					-webkit-transform: rotate(-45deg);
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		&.custom {
+			background-size: contain;
+			border-radius: 0;
+			border: none;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+	}

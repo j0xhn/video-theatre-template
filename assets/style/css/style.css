@@ -1,0 +1,699 @@
+.dev-page .banner {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/dev-banner-2.jpg) no-repeat top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 30px 0 0 0px;
+}
+.dev-page .banner .content {
+  padding: 0px 10px;
+}
+.dev-page .banner .banner-title {
+  color: white;
+  text-align: left;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+.dev-page .banner .banner-sub {
+  color: white;
+  margin-bottom: 20px;
+}
+.dev-page .banner .btn {
+  font-size: 12px;
+  padding: 5px 20px;
+}
+.dev-page section .header {
+  padding: 0px 20px 10px;
+}
+.dev-page section .header .sub-header {
+  font-size: 12px;
+}
+.dev-page .explore-jane {
+  padding: 30px 0 0;
+}
+.dev-page .full {
+  width: 300px;
+  padding: 20px 0;
+  background-color: white;
+  height: inherit;
+  margin: 0 auto 20px;
+}
+.dev-page .full img {
+  width: 22%;
+}
+.dev-page .full img.testing {
+  opacity: .5;
+  cursor: pointer;
+}
+.dev-page .full img.testing:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.dev-page .item {
+  width: 300px;
+  height: 300px;
+  background-color: #eeeeee;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0px auto 20px;
+}
+.dev-page .item.empty {
+  visibility: hidden;
+}
+.dev-page .item.open-job-listings {
+  cursor: pointer;
+}
+.dev-page .item.open-job-listings:hover .inner-content h2 {
+  color: #7cd8cb;
+}
+.dev-page .item .main {
+  background-color: #fff;
+  height: 300px;
+  position: relative;
+}
+.dev-page .item .main.top-half {
+  height: 150px;
+}
+.dev-page .item .main .inner-content {
+  padding: 30px;
+}
+.dev-page .item .main .inner-content h5 {
+  margin-bottom: 0px;
+  text-align: left;
+  font-size: 14px;
+}
+.dev-page .item .main .inner-content h2 {
+  color: black;
+  text-align: left;
+  font-weight: 400;
+  font-size: 28px;
+}
+.dev-page .item .main p {
+  text-align: left;
+  line-height: 21px;
+  font-size: 14px;
+}
+.dev-page .item .quarter {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  display: none;
+}
+.dev-page .item .quarter.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+.dev-page .item .quarter.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.dev-page .item .quarter.top-right {
+  top: 0;
+  right: 0;
+}
+.dev-page .item .quarter.top-half {
+  top: 0;
+  right: 0;
+}
+.dev-page .owl-carousel {
+  cursor: pointer;
+}
+.dev-page .banner-carousel {
+  width: 100%;
+  margin-bottom: 0px;
+  overflow: auto;
+}
+.dev-page .banner-carousel .owl-buttons {
+  display: none;
+}
+.dev-page .carousel .slide {
+  height: 300px;
+  width: 300px;
+}
+.dev-page .carousel .owl-theme .owl-controls {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+}
+.dev-page .carousel .owl-theme .owl-controls .owl-page span {
+  background: #fff;
+}
+.dev-page .carousel.item .inner-content {
+  position: absolute;
+  z-index: 2;
+}
+.dev-page .carousel.item .inner-content h5 {
+  color: white;
+}
+.dev-page .carousel.item .inner-content h2 {
+  color: white;
+}
+.dev-page .carousel .owl-carousel .owl-wrapper-outer {
+  height: 300px;
+}
+.dev-page .jane-perk.choose img {
+  width: 276px;
+  margin-top: -20px;
+}
+.dev-page .jane-values p {
+  margin-bottom: 15px;
+}
+.dev-page .jane-values .value-carousel .owl-controls {
+  display: none !important;
+}
+.dev-page .jane-office .office {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/jane/dev-page-test-office.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-office .conference {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/conference.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-office .sign {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/sign.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-office .hallway {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/hallway.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-office .kitchen {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/kitchen.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .ryan {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/ryan.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .jeremy {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/jeremy.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .kevin {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/kevin.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .chase {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/chase.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .lee {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/lee-2.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .stark {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/stark.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-team .john {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/john.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-games .duty {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/cod-01.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-games .smash {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/ssbwu-01.png) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-activities .goKart {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/go-kart-2.jpg) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-activities .boulder {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/bouldering.jpg) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-activities .hiking {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/hiking.jpg) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .jane-activities .concert {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/concert.jpg) top center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.dev-page .office {
+  background: url(//d2ilfdg091sfom.cloudfront.net/content/images/jane/dev-page-test-office.png) top center;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+}
+.dev-page .tooltip-inner {
+  background-color: #555555;
+}
+.dev-page .tooltip.top .tooltip-arrow {
+  border-top-color: #555555;
+}
+.dev-page .open-positions {
+  background: #FFF;
+  padding: 30px 0 50px;
+  margin-bottom: 20px;
+}
+.dev-page .open-positions .content {
+  padding: 0;
+}
+.dev-page .open-positions .header {
+  border-bottom: 1px solid #E5E5E5;
+}
+.dev-page .open-positions .jobs-board {
+  text-align: left;
+  max-width: 1000px;
+  margin: 0px auto;
+}
+/* line 20, ../sass/bootstrap/_mixins.scss */
+.dev-page .open-positions .jobs-board:before, .dev-page .open-positions .jobs-board:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+/* line 25, ../sass/bootstrap/_mixins.scss */
+.dev-page .open-positions .jobs-board:after {
+  clear: both;
+}
+.dev-page .open-positions .jobs-board p, .dev-page .open-positions .jobs-board h3, .dev-page .open-positions .jobs-board h4, .dev-page .open-positions .jobs-board h5 {
+  text-align: left;
+}
+.dev-page .open-positions .left, .dev-page .open-positions .right {
+  float: left;
+}
+.dev-page .open-positions .left {
+  width: 100%;
+}
+.dev-page .open-positions .left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dev-page .open-positions .left ul li {
+  line-height: 50px;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 0 0 20px;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+}
+.dev-page .open-positions .left ul li:before {
+  content: '';
+  display: block;
+  height: 30px;
+  width: 5px;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin: -15px 0 0 0;
+}
+.dev-page .open-positions .left ul li:after {
+  content: "\f054";
+  font-family: FontAwesome;
+  position: absolute;
+  line-height: 50px;
+  padding-right: 20px;
+  top: 0;
+  right: 0;
+  color: #ccc;
+  display: block;
+}
+.dev-page .open-positions .left ul li:hover:before {
+  background-color: #EEE;
+}
+.dev-page .open-positions .right {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.95);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+.dev-page .open-positions .right .job {
+  display: none;
+}
+.dev-page .open-positions .right .job h4 {
+  text-align: center;
+}
+.dev-page .open-positions .right.show {
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.dev-page .open-positions .right i.close-job {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 20px;
+  color: #CCC;
+  font-size: 18px;
+}
+.dev-page .open-positions .right i.close-job:hover {
+  color: #ff8188;
+}
+.dev-page .open-positions .right .job-title {
+  text-align: center;
+}
+.dev-page .open-positions .right form {
+  max-width: 660px;
+}
+.dev-page .open-positions .right form .form-control {
+  border-radius: 0px;
+}
+.dev-page .open-positions .right form label {
+  font-weight: normal;
+  font-size: 12px;
+  color: #999;
+}
+.dev-page .open-positions.c-sharp .right .c-sharp.job {
+  display: block;
+}
+.dev-page .open-positions.front-end-developer .right .front-end-developer.job {
+  display: block;
+}
+.dev-page .open-positions.test-automation-engineer .right .test-automation-engineer.job {
+  display: block;
+}
+.dev-page .open-positions.android .right .android.job {
+  display: block;
+}
+.dev-page .owl-theme .owl-controls {
+  margin-top: 5px;
+  text-align: center;
+}
+@media only screen and (min-width: 500px) {
+  .dev-page section .header .sub-header {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 680px) {
+  .dev-page section .header {
+    padding: 0px 0px 40px;
+  }
+  .dev-page .banner {
+    padding: 60px 0;
+  }
+  .dev-page .banner .banner-title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .dev-page .full {
+    width: 100%;
+  }
+  .dev-page .full img {
+    width: 11%;
+  }
+  .dev-page .item {
+    width: 320px;
+    height: 320px;
+    display: block;
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+  .dev-page .item .main {
+    height: 320px;
+  }
+  .dev-page .item .main .inner-content {
+    padding: 36px;
+  }
+  .dev-page .explore-jane {
+    padding: 60px 0;
+  }
+  .dev-page .explore-jane .content {
+    width: 660px;
+  }
+  .dev-page .explore-jane .item:nth-child(2n+1) {
+    margin-right: 0px;
+  }
+  .dev-page .carousel .slide {
+    height: 320px;
+    width: 320px;
+  }
+  .dev-page .carousel .owl-carousel .owl-wrapper-outer {
+    height: 320px;
+  }
+  .dev-page .open-positions {
+    padding: 60px 0 0;
+  }
+  .dev-page .open-positions .left {
+    float: left;
+    width: 280px;
+    padding: 40px 0;
+  }
+  .dev-page .open-positions .left ul li {
+    border-bottom: none;
+    padding: 0 0 0 30px;
+  }
+  .dev-page .open-positions .left ul li:after {
+    display: none;
+  }
+  .dev-page .open-positions .left ul li.selected {
+    font-weight: bold;
+    color: #333;
+  }
+  .dev-page .open-positions .left ul li.selected:before {
+    background-color: #7cd8cb;
+  }
+  .dev-page .open-positions .right {
+    width: auto;
+    float: none;
+    margin-left: 280px;
+    position: relative;
+    overflow-y: hidden;
+    padding: 0;
+    display: block !important;
+    border-left: 1px solid #e5e5e5;
+    padding: 40px;
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .dev-page .open-positions .right.show {
+    -moz-transition-duration: 0ms;
+    -o-transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+    transition-duration: 0ms;
+  }
+  .dev-page .open-positions .right.hide {
+    -moz-transition-duration: 0ms;
+    -o-transition-duration: 0ms;
+    -webkit-transition-duration: 0ms;
+    transition-duration: 0ms;
+  }
+  .dev-page .open-positions .right i.close-job {
+    display: none !important;
+  }
+  .dev-page .open-positions .right .job-title {
+    text-align: left;
+  }
+  .dev-page .open-positions .right form {
+    max-width: 660px;
+  }
+  .dev-page .open-positions.c-sharp .left .c-sharp {
+    font-weight: bold;
+    color: #333;
+  }
+  .dev-page .open-positions.c-sharp .left .c-sharp:before {
+    background-color: #7cd8cb;
+  }
+  .dev-page .open-positions.front-end-developer .left .front-end-developer {
+    font-weight: bold;
+    color: #333;
+  }
+  .dev-page .open-positions.front-end-developer .left .front-end-developer:before {
+    background-color: #7cd8cb;
+  }
+  .dev-page .open-positions.test-automation-engineer .left .test-automation-engineer {
+    font-weight: bold;
+    color: #333;
+  }
+  .dev-page .open-positions.test-automation-engineer .left .test-automation-engineer:before {
+    background-color: #7cd8cb;
+  }
+  .dev-page .open-positions.android .left .android {
+    font-weight: bold;
+    color: #333;
+  }
+  .dev-page .open-positions.android .left .android:before {
+    background-color: #7cd8cb;
+  }
+  .dev-page .jane-perk.choose img {
+    width: 286px;
+  }
+}
+@media only screen and (min-width: 768px) {}
+  .dev-page section .header .sub-header {
+    font-size: 20px;
+  }
+  .dev-page .banner .btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+  .dev-page .open-positions .left {
+    width: 320px;
+  }
+  .dev-page .open-positions .right {
+    margin-left: 320px;
+  }
+}
+@media only screen and (min-width: 1000px) {}
+  .dev-page section {
+    padding: 60px 0;
+  }
+  .dev-page section .header {
+    padding: 0px 0px 40px;
+  }
+  .dev-page section .header .sub-header {
+    font-size: 24px;
+  }
+  .dev-page .banner {
+    padding: 60px 0 30px;
+  }
+  .dev-page .explore-jane .content {
+    width: 1000px;
+  }
+  .dev-page .explore-jane .item:nth-child(2n+1) {
+    margin-right: 20px;
+  }
+  .dev-page .explore-jane .item:nth-child(3n+1) {
+    margin-right: 0px;
+  }
+  .dev-page .banner .banner-sub {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  .dev-page .banner-carousel {
+    margin-bottom: 0px;
+  }
+  .dev-page .banner-carousel .owl-pagination {
+    display: none;
+  }
+  .dev-page .banner-carousel .owl-buttons {
+    display: block;
+  }
+  .dev-page .banner-carousel .item {
+    opacity: .85;
+  }
+  .dev-page .banner-carousel .item.highlight {
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 1200px) {}
+  .dev-page .group .content {
+    padding-top: 44px;
+  }
+  .dev-page .banner .banner-title {
+    font-size: 48px;
+    line-height: 64px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1367px) {}
+  .dev-page .content {
+    padding: 0;
+  }
+  .dev-page .explore-jane .content {
+    width: 100%;
+  }
+  .dev-page .explore-jane .item:nth-child(3n+1) {
+    margin-right: 20px;
+  }
+  .dev-page .explore-jane .item:nth-child(4n+1) {
+    margin-right: 0px;
+  }
+  .dev-page .explore-jane .item.half {
+    width: 660px;
+  }
+  .dev-page .explore-jane .item.half:nth-child(2n+1) {
+    margin-right: 0px;
+  }
+}

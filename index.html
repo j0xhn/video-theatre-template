@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Video Landing Page</title>
+    <link rel="stylesheet" href="third-party/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="third-party/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="third-party/theatre/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/style/css/style.css">
+</head>
+<body>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <!-- Plugins -->
+    <script src="third-party/owl-carousel/owl.carousel.js"></script>
+    <script src="third-party/sweet-alert/sweet-alert.js"></script>
+    <script src="third-party/theater/theater.min.js"></script>
+    <!-- <script src="~/Scripts/bootstrap/tooltip.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            /*------------------------------------*\
+               #CREATES CAROUSELS
+               \*------------------------------------*/
+
+               $(".activity-carousel").owlCarousel({
+                singleItem: true,
+                autoPlay: 9000,
+                stopOnHover: true
+            });
+               $(".team-carousel").owlCarousel({
+                singleItem: true,
+                autoPlay: 12000,
+                stopOnHover: true
+            });
+               $(".office-carousel").owlCarousel({
+                singleItem: true,
+                autoPlay: 8000,
+                stopOnHover: true
+            });
+               $(".game-carousel").owlCarousel({
+                singleItem: true,
+                autoPlay: 17000,
+                stopOnHover: true
+            });
+
+            // moves each slide over on modular section
+            $(document).on('click', '.slide', function () {
+                $(this).closest('.owl-carousel').data('owlCarousel').next()
+                var selection = $(this).attr('class');
+                dataLayerPush('careers', 'carousel select', selection);
+            });
+
+
+
+
+            /*------------------------------------*\
+               #TYPING ON TOP BANNER
+               \*------------------------------------*/
+
+            // Scenario code is displayed within #write.
+            var $log = document.querySelector("#log");
+
+            // Create a new instance of TheaterJS with defaults options.
+            var theater = new TheaterJS();
+
+
+
+            // First, describe actors by passing a name,
+            // an experience and finally a selector string.
+            theater.describe("jane", { speed: .8, accuracy: .6, invincibility: 8 }, "#janeWrite");
+
+            theater
+            .write("jane:grew 230% last year", 600)
+            .write("jane:like ping pong ...", 300, " A LOT", 400)
+            .write("jane:work with a modern stack", 600)
+            .write("jane:employ great people")
+            .write(-6)
+            .write("developers", 600)
+            .write("jane:have a tight knit dev team", 600)
+            .write("jane:do fun things together", 600)
+            .write("jane:want you here", 600)
+            .write("jane:are you still reading these?", 600)
+            .write("jane:cause you should stop", 600)
+            .write("jane:and apply already!!!", 600)
+            .write("jane:don't want to?", 600)
+            .write("jane:fine...", 900)
+            .write("jane:be that way...", 900)
+            .write("jane:you're missing out though", 600)
+            .write("jane:on a great company", 600)
+            .write("jane:like legit", 600)
+            .write("jane:seriously awesome", 600)
+            .write("jane:don't believe it?", 600)
+            .write("jane:send us an email", 600)
+            .write("jane:should_i_work@Jane.com", 600)
+            .write("jane:and you'll see why", 600)
+            .write("jane:miss that address?", 600)
+            .write("jane:too bad", 600)
+            .write("jane:jk lol, here it is again", 600)
+            .write("jane:should_i_work@Jane.com", 1000)
+            .write("jane:Welp...", 600)
+            .write("jane:gotta get back to work", 600)
+            .write("jane:cause we're pretty busy", 600)
+            .write("jane:specially because we just", 600)
+
+            .write(function () { theater.play(true); });
+
+
+            theater
+            .on("say:start, erase:start", function (eventName) {
+                  // this refer to the TheaterJS instance.
+                  var self = this,
+
+                      // The current actor is referenced as this.current
+                      // Its voice is the third element passed to the describe method.
+                      // It could be of two types: a DOM element or a function.
+                      current = self.current.voice;
+
+                  // TheaterJS has some useful methods such as
+                  // addClass, hasClass, removeClass, ...
+                  // Note: the "saying" class adds the blinking caret.
+                  self.utils.addClass(current, "saying");
+              });
+
+
+
+
+
+
+
+
+
+            /*------------------------------------*\
+                 #OPEN POSITIONS
+                 \*------------------------------------*/
+                 $(".left li").click(function () {
+                // switch out viewable section
+                jobTitle = $(this).attr('class').split(' ')[0];
+                $(this).closest('.open-positions').removeClass().addClass('open-positions ' + jobTitle);
+                // tell GA what got opened
+                dataLayerPush('careers', 'open position', jobTitle);
+
+                // animation for mobile
+                $(".right").addClass('show');
+
+                // scroll lock for small screens
+                if (window.innerWidth < 680) {
+                    $("html").addClass('scroll-lock');
+                }
+            });
+                 $(".close-job").click(function () {
+                    $(".right").removeClass('show');
+
+                // scroll lock for small screens
+                if (window.innerWidth < 680) {
+                    $("html").removeClass('scroll-lock');
+                }
+            });
+
+                 $('.open-job-listings').click(function () {
+                    $('html, body').animate({
+                        scrollTop: $($('#jobs')).offset().top
+                    }, 500);
+                    return false;
+                });
+
+
+
+                 $('#jobs').waypoint(function () {
+                    dataLayerPush('careers', 'view job postings', 'total times appeared');
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+            /*------------------------------------*\
+                 #FORM START, SUBMIT, AND CLEAR
+                 \*------------------------------------*/
+                 var isSubmitting = false;
+            var jobTitle = 'c-sharp'; //default job that's open
+            $('form #comment').on('focus', function () {
+                dataLayerPush('careers', 'position start', 'comment ' + jobTitle);
+            });
+            $('form #email').on('focus', function () {
+                dataLayerPush('careers', 'position start', 'email ' + jobTitle);
+            });
+            $('form').on('submit', function (event) {
+                event.preventDefault();
+
+                var form = $(this);
+                jobTitle = form.closest('.open-positions').attr('class').split(' ')[1];
+                var comment = form.find('#comment').val();
+                var email = form.find('#email').val();
+                var file = form.find('#file')[0].files[0];
+
+                if (!comment && !email && !file) {
+                    swal({
+                        title: "Oops",
+                        text: "Looks like you didn't enter anything, try again",
+                        timer: 2000
+                    });
+                    dataLayerPush('careers', 'position submit', 'empty');
+
+                    return;
+                }
+
+                if (isSubmitting) {
+                    return;
+                }
+                isSubmitting = true;
+                form.find('.btn-loader').addClass('loading');
+
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                    isSubmitting = false;
+                    form.find('.btn-loader').removeClass('loading');
+                    if (xhr.status >= 200 && xhr.status <= 299) {
+                        dataLayerPush('careers', 'position success', jobTitle);
+                        form[0].reset();
+                        form.find('.btn-loader').addClass('successful disabled');
+                        form.parent().append("<p class='success-message txt-mint'> Thanks for reaching out! We'll contact you within the next 3 days.</p>");
+                    } else {
+                        swal({
+                            title: "Oops",
+                            text: "Looks like it didn't work, try again",
+                            timer: 2000
+                        });
+                        dataLayerPush('careers', 'position submit', 'error - non 200 response code');
+                    }
+
+                };
+                xhr.open('POST', '/job-applications', true);
+
+                var formData = new FormData();
+                formData.append('jobTitle', jobTitle);
+                formData.append('description', comment);
+                formData.append('email', email);
+                if (file) {
+                    formData.append('resume', file, file.name);
+                }
+
+                xhr.send(formData);
+            });
+
+
+
+
+
+
+            /*------------------------------------*\
+                #Testing Tooltip and Click
+                \*------------------------------------*/
+                $('.testing').on('mouseenter', function () {
+                    $(this).tooltip('toggle');
+                })
+
+                $('.scrollToJobs').on('click', function () {
+                    $('html, body').animate({
+                        scrollTop: $("#jobs").offset().top
+                    }, 1000);
+
+                    if ($(this).hasClass('testing')) {
+                        $('.open-positions').removeClass().addClass('open-positions test-automation-engineer');
+                        dataLayerPush('careers', 'view job postings', 'from selenium button');
+                    } else {
+                        dataLayerPush('careers', 'view job postings', 'from top banner button');
+                    }
+                })
+
+
+
+            });
+        </script>
+
+    <div class="landing dev-page">
+
+        <section class="banner pad30b">
+            <div class="content">
+                <p class="animated fadeInUp banner-title">
+                    &nbsp; &nbsp;<span class="txt-mint">jane</span><span class="txt-grayLight"> : { </span><br />
+                    <span class="txt-pink">&nbsp; &nbsp;&nbsp; &nbsp; desc</span><span class="txt-grayLight"> : " </span><span> a boutique marketplace </span><span class="txt-grayLight"> " ,&nbsp; &nbsp; </span><br />
+                    <span class="txt-pink">&nbsp; &nbsp;&nbsp; &nbsp; we</span><span class="txt-grayLight"> : " </span><span id="janeWrite"> grew 230% last year </span><span class="txt-grayLight"> "</span><br />
+                    &nbsp; &nbsp;<span class="txt-grayLight"> } </span>
+                </p>
+            </div>
+            <div class="btn bgPurple scrollToJobs">VIEW JOB OPENINGS</div>
+            <p class="mar0">Scroll down to see more</p>
+        </section>
+
+        <section class="explore-jane group bgGrayLighter">
+            <div class="header">
+                <h1 class="mar10b">WHAT WE'RE MADE OF</h1>
+                <p class="sub-header">Our stack, office, people, and open positions</p>
+            </div>
+            <div class="content" style="padding: 0;">
+
+                <div class="full bgWhite">
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/angular-2.jpg" />
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/react-2.jpg" />
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/node-2.jpg" />
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/aws-2.jpg" />
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/net-2.jpg" />
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/github-2.jpg" />
+                    <img src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/native-2.jpg" />
+                    <img class="testing scrollToJobs" data-toggle="tooltip" data-placement="top" title="Currently use, but aren't fully commited to.  Have a better solution?  Click the icon and view the position for our test automation engineer" src="//d2ilfdg091sfom.cloudfront.net/content/images/dev-page/selenium-2.jpg" />
+            </div><!--
+
+        --><div class="item jane-office carousel">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-grayLight">Jane</h5>
+                <h2>Office</h2>
+            </div>
+            <div class="office-carousel">
+                <div class="slide sign"></div>
+                <div class="slide office"></div>
+                <div class="slide conference"></div>
+                <div class="slide kitchen"></div>
+                <div class="slide hallway"></div>
+
+            </div>
+        </div>
+            </div><!--
+
+        --><div class="item jane-team carousel">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-white">the jane</h5>
+                <h2 class="txt-white">team</h2>
+            </div>
+            <div class="team-carousel">
+                <div class="slide ryan"></div>
+                <div class="slide jeremy"></div>
+                <div class="slide kevin"></div>
+                <div class="slide chase"></div>
+                <div class="slide lee"></div>
+                <div class="slide stark"></div>
+                <div class="slide john"></div>
+            </div>
+
+        </div>
+            </div><!--
+
+
+
+        --><div class="item jane-games carousel">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-white">Break Time</h5>
+                <h2 class="txt-white">Gaming</h2>
+            </div>
+            <div class="game-carousel">
+                <div class="slide duty"></div>
+                <div class="slide smash"></div>
+            </div>
+
+        </div>
+            </div><!--
+
+
+
+
+        --><div class="item jane-activities carousel">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-white">JANE</h5>
+                <h2 class="txt-white">ACTIVITIES</h2>
+            </div>
+            <div class="activity-carousel">
+                <div class="slide goKart"></div>
+                <div class="slide boulder"></div>
+                <div class="slide concert"></div>
+                <div class="slide hiking"></div>
+            </div>
+
+        </div>
+            </div><!--
+
+
+
+
+        --><div class="item half jane-perk">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-grayLight">work</h5>
+                <h2>Autonomy</h2>
+                <p class="f16 txt-black">Perfect Your Craft</p>
+                <p>We’re growing rapidly and the solutions that used to work now may be ineffective. The people that work at Jane are smart, hence new and better ideas are bound to happen.</p>
+            </div>
+        </div>
+            </div><!--
+
+
+
+
+        --><div class="item half jane-perk">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-grayLight">OUR</h5>
+                <h2>values</h2>
+                <p class="f16 txt-black">Devotion, Innovation, Community, Compassionate</p>
+                <p>
+                    We're devoted to owning the code we write.  We use new technologies to over deliver on what our customers, co-workers, and company expect from us.
+                </p>
+            </div>
+        </div>
+            </div><!--
+
+
+
+        --><div class="item half jane-perk choose">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-grayLight">other</h5>
+                <h2>perks</h2>
+                <p class="f16 txt-black">What else do ya got?</p>
+                <p>Ping pong / pool table, competitive salary, full benefits, fully stocked kitchen, frequent in-office lunches (seriously, today we had Zupas, yesterday Rubios) ... what's not to love?</p>
+            </div>
+        </div>
+            </div><!--
+
+
+
+
+
+        --><div class="item half jane-perk">
+        <div class="main">
+            <div class="inner-content">
+                <h5 class="txt-grayLight">team</h5>
+                <h2>culture</h2>
+                <p class="f16 txt-black">Birds of a Feather</p>
+                <p>We're all pretty chill and usually do things together outside the office like go to concerts, bowling, lunch, rock climbing, shooting, go-carting, hiking... I think you get the point.</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</section>
+
+<section class="open-positions c-sharp" id="jobs">
+    <div class="header">
+        <h1 class="mar10b">Job Openings</h1>
+        <p class="sub-header">Let the application submitting begin!</p>
+    </div>
+    <div class="content">
+        <div class="jobs-board">
+            <div class="left">
+                <ul>
+                    <li class="c-sharp">C# Engineer</li>
+                    <li class="front-end-developer">Front End Developer</li>
+                    <li class="test-automation-engineer">Test Automation Engineer</li>
+                    <li class="android">Android Developer</li>
+                </ul>
+            </div>
+            <div class="right">
+
+                <i class="fa fa-chevron-left close-job"></i>
+
+                <!-- JOB -->
+                <div class="c-sharp job">
+                    <h4 class="job-title">C# Engineer</h4>
+                    <p>Server code is our bread and butter here at Jane.  You would work with a tight knit team improving our services, databases, and dabbling on the front end if you happen to like that.  We enjoy well rounded engineers who can contribute to architecture, and help improve our testability, maintainability, and scalability — that’s a lot of abilities, we know.  If you’d like to be a part of this rapidly growing company drop us a line below.</p>
+
+                    <h5>Bonus Qualifications</h5>
+                    <p>Give yourself a high five (and us your resume) if you have one or two of the bonus qualifications below. Cool points awarded for each additional qualification demonstrated.</p>
+                    <ul>
+                        <li>AWS hosting and services</li>
+                        <li>Deployment automation</li>
+                        <li>Github</li>
+                        <li>JavaScript and AngularJS</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                    <h5>Interested?</h5>
+                    <div class="apply-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="comment">Tell us about yourself.</label>
+                                <textarea id="comment" class="form-control" rows="3"></textarea>
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email">
+                                <label for="file" class="hidden-xs">Optional Resume Upload</label>
+                                <input type="file" id="file" class="hidden-xs">
+                                <button class="btn btn-primary f100 btn-loader">
+                                    <span>Submit</span>
+                                    <div class="state loader">
+                                        <div class="dots"></div>
+                                    </div>
+                                    <div class="state success">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- JOB -->
+                <div class="front-end-developer job">
+                    <h4>Front End Developer</h4>
+                    <p>Work with our designers and user experience team to bring the user interface to life.   We use Sass, Angular, ReactJS and even though we ensure cross browser & device compatibility you don’t have to worry about anything too old… we only go IE9 and above.  Can we get a virtual fist bump for that?</p>
+
+                    <h5>Bonus Qualifications</h5>
+                    <ul>
+                        <li>Rapid prototyping and user experience testing.</li>
+                        <li>Source control such as Git.</li>
+                        <li>SASS</li>
+                    </ul>
+                    <h5>Interested?</h5>
+                    <div class="apply-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="comment">Tell us about yourself.</label>
+                                <textarea id="comment" class="form-control" rows="3"></textarea>
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email">
+                                <label for="file" class="hidden-xs">Optional Resume Upload</label>
+                                <input type="file" id="file" class="hidden-xs">
+                                <button class="btn btn-primary f100 btn-loader">
+                                    <span>Submit</span>
+                                    <div class="state loader">
+                                        <div class="dots"></div>
+                                    </div>
+                                    <div class="state success">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- JOB -->
+                <div class="test-automation-engineer job">
+                    <h4>Test Automation Engineer</h4>
+                    <p>To date, we have relied on our developers to also create tests in Selenium.  However, we are looking for team members that are dedicated to testing.  Don't like selenium? Thats just fine!  We are open to new technologies and methodologies.  Quality is very important to us as we deploy frequently. Want to start us off right here at Jane?  Drop us a line and let us know. </p>
+
+                    <h5>Bonus Qualifications</h5>
+                    <ul>
+                        <li>Exposure to Continuous Deployment</li>
+                        <li>Ping pong talent</li>
+                    </ul>
+                    <h5>Interested?</h5>
+                    <div class="apply-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="comment">Tell us about yourself.</label>
+                                <textarea id="comment" class="form-control" rows="3"></textarea>
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email">
+                                <label for="file" class="hidden-xs">Optional Resume Upload</label>
+                                <input type="file" id="file" class="hidden-xs">
+                                <button class="btn btn-primary f100 btn-loader">
+                                    <span>Submit</span>
+                                    <div class="state loader">
+                                        <div class="dots"></div>
+                                    </div>
+                                    <div class="state success">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- JOB -->
+                <div class="android job">
+                    <h4>Android Developer</h4>
+                    <p>Jane is constantly launching new features and our mobile team needs someone who can manage our Android app.  You’ll be working with our iOS team to keep the apps in sync and launch new features together.  We enjoy team members who can bring their own ideas and this position would have responsibility for pushing the limits of how awesome a mobile shopping app can be. </p>
+
+                    <h5>Bonus Qualifications</h5>
+                    <ul>
+                        <li>Knowledge of Git</li>
+                        <li>Experience with C# and creating APIs</li>
+                        <li>Design & Architecture Minded</li>
+                    </ul>
+                    <h5>Interested?</h5>
+                    <div class="apply-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="comment">Tell us about yourself.</label>
+                                <textarea id="comment" class="form-control" rows="3"></textarea>
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email">
+                                <label for="file" class="hidden-xs">Optional Resume Upload</label>
+                                <input type="file" id="file" class="hidden-xs">
+                                <button class="btn btn-primary f100 btn-loader">
+                                    <span>Submit</span>
+                                    <div class="state loader">
+                                        <div class="dots"></div>
+                                    </div>
+                                    <div class="state success">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+</div>
+</body>
+</html>
+
+
+
