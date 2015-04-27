@@ -1,0 +1,29 @@
+{
+  "name": "video-theatre-landing",
+  "version": "1.0.0",
+  "description": "basic landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johndangerstorey/video-theatre-template.git"
+  },
+  "keywords": [
+    "video",
+    "theatre"
+  ],
+  "author": "John D. Storey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johndangerstorey/video-theatre-template/issues"
+  },
+  "homepage": "https://github.com/johndangerstorey/video-theatre-template",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "jit-grunt": "^0.9.1"
+  }
+}
